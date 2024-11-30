@@ -13,9 +13,25 @@ export default {
         light_green: "#44A5B5",
         brown: "#AD8E54",
       },
+      screens: {
+        'custom': '1360px',
+      },
       fontFamily: {
         sans: ["Inter", "Helvetica", "Arial", "sans-serif"],
         heading: ["Roboto", "sans-serif"],
+      },
+      fontSize: {
+        "heading-lg": ["16px"],
+        "heading-md": ["14px"],
+        "heading-sm": ["12px"], 
+
+        "desc-lg": ["14px"],
+        "desc-md": ["12px"], 
+        "desc-sm": ["10px"],
+
+        "table-lg": ["14px"],
+        "table-md": ["12px"], 
+        "table-sm": ["10px"],
       },
     },
   },
