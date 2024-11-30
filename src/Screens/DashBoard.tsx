@@ -86,23 +86,18 @@ function DashBoard() {
 
   return (
     <div className="p-6 border-[1px] m-2 border-light_blue rounded-sm">
-      <div className="flex gap-4 flex-1 justify-between">
+      <div className="flex gap-4 flex-1 justify-between flex-wrap">
         <ChartBox>
-          <div className="flex">
+          <div className="flex basis-1/2 xl:basis-1/3">
             <div className="flex flex-col gap-3 flex-1">
               <p className="capitalize font-bold">Employ turnover rate</p>
-              <p className="font-bold text-green text-xl">{"25%"}</p>
+              <p className="font-bold text-green text-xl lg:text-sm">{"25%"}</p>
               <p className="capitalize font-light text-text">
                 {"Resignatioin Last 90 days: 0"}
               </p>
             </div>
             <div
-              style={{
-                padding: "20px",
-                background: "#ecf0f1",
-                borderRadius: "8px",
-                width: "50%",
-              }}
+             className="p-5 bg-gray-100 rounded-lg w-1/2"
             >
               <h3>Overall Attendance</h3>
               <Bar data={barData} options={barOptions} />
@@ -111,7 +106,7 @@ function DashBoard() {
         </ChartBox>
 
         <ChartBox>
-          <div className="flex justify-between h-full">
+          <div className="flex justify-between h-full basis-1/2 xl:basis-1/3">
             <div className="flex flex-col gap-3 flex-1 border-r-2 border-black justify-center">
               <p className="capitalize font-bold">Total Employees</p>
               <p className="font-bold text-green text-xl">{"123"}</p>
@@ -132,7 +127,7 @@ function DashBoard() {
         </ChartBox>
 
         <ChartBox>
-          <div className="flex">
+          <div className="flex basis-1/2 xl:basis-1/3">
             <div className="flex flex-col gap-3 flex-1">
               <p className="capitalize font-bold">Employ turnover rate</p>
               <p className="font-bold text-green text-xl">{"25%"}</p>
@@ -142,12 +137,7 @@ function DashBoard() {
             </div>
 
             <div
-              style={{
-                padding: "20px",
-                background: "#ecf0f1",
-                borderRadius: "8px",
-                width: "50%",
-              }}
+            className="p-5 bg-gray-100 rounded-lg w-1/2"
             >
               <h3>Overall Attendance</h3>
               <Bar data={barData2} options={barOptions2} />
@@ -156,7 +146,7 @@ function DashBoard() {
         </ChartBox>
       </div>
 
-      <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 grid-rows-1 xl:grid-rows-2 gap-4 mt-6">
         <ChartBox>
           <>
             <div className="flex justify-between">
