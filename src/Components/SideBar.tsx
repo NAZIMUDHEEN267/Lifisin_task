@@ -21,7 +21,6 @@ function Sidebar() {
     "Organization",
   ];
 
-  return
 
   return (
     <div className="w-5/12 sm:w-3/12 bg-white lg:w-2/12 absolute lg:relative z-30  text-white top-0 scroll-auto p-1 h-screen">

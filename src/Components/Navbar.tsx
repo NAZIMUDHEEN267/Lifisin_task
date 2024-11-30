@@ -32,7 +32,7 @@ function Navbar({ handleBar }: Props) {
         />
       </div>
 
-      {showNav && (
+      {/* {showNav && (
         <div
           className={`absolute top-0 left-0 w-full bg-gray-200 shadow-lg p-2
           transition-transform duration-300 ease-in
@@ -91,7 +91,7 @@ function Navbar({ handleBar }: Props) {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       <div className="hidden p-2 justify-between border-[1px] m-1 border-light_blue lg:flex">
         <div className="flex justify-center items-center  flex-grow basis-2.5/4">
