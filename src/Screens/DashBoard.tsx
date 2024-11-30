@@ -1,5 +1,5 @@
 import { FaArrowsAltV } from "react-icons/fa";
-import ChartBox from "@/Components/ChartBox";
+import ChartBox from "../Components/ChartBox";
 import {
   Chart as ChartJS,
   CategoryScale,
