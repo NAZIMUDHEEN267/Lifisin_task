@@ -1,5 +1,25 @@
 import { FaArrowsAltV } from "react-icons/fa";
-import ChartBox from "../Components/ChartBox";
+import ChartBox from "@/Components/ChartBox";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+
+
+ChartJS.register(
+  CategoryScale, 
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 type DataType = {
   item1: string;
@@ -8,7 +28,7 @@ type DataType = {
   item4: string;
 };
 
-const data = Array.from(
+const data2 = Array.from(
   { length: 4 },
   (): DataType => ({
     item1: "RQ-002-2024",
@@ -19,21 +39,79 @@ const data = Array.from(
 );
 
 function DashBoard() {
+
+
+  const barData = {
+    labels: ["2021", "2022"],
+    datasets: [
+      {
+        label: "Attendance Rate (%)",
+        data: [24, 30],
+        backgroundColor: ["#4caf50", "#8e44ad"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const barOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+
+  const barData2 = {
+    labels: ["2021", "2022"],
+    datasets: [
+      {
+        label: "Attendance Rate (%)",
+        data: [65, 93],
+        backgroundColor: ["#4caf50", "#8e44ad"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const barOptions2 = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
   return (
     <div className="p-6 border-[1px] m-2 border-light_blue rounded-sm">
       <div className="flex gap-4 flex-1 justify-between">
         <ChartBox>
-          <div className="flex flex-col gap-3">
-            <p className="capitalize font-bold">Employ turnover rate</p>
-            <p className="font-bold text-green text-xl">{"25%"}</p>
-            <p className="capitalize font-light text-text">
-              {"Resignatioin Last 90 days: 0"}
-            </p>
+          <div className="flex">
+            <div className="flex flex-col gap-3 flex-1">
+              <p className="capitalize font-bold">Employ turnover rate</p>
+              <p className="font-bold text-green text-xl">{"25%"}</p>
+              <p className="capitalize font-light text-text">
+                {"Resignatioin Last 90 days: 0"}
+              </p>
+            </div>
+            <div
+              style={{
+                padding: "20px",
+                background: "#ecf0f1",
+                borderRadius: "8px",
+                width: "50%",
+              }}
+            >
+              <h3>Overall Attendance</h3>
+              <Bar data={barData} options={barOptions} />
+            </div>
           </div>
         </ChartBox>
 
         <ChartBox>
-          <div className="flex justify-between">
+          <div className="flex justify-between h-full">
             <div className="flex flex-col gap-3 flex-1 border-r-2 border-black justify-center">
               <p className="capitalize font-bold">Total Employees</p>
               <p className="font-bold text-green text-xl">{"123"}</p>
@@ -54,12 +132,26 @@ function DashBoard() {
         </ChartBox>
 
         <ChartBox>
-          <div className="flex flex-col gap-3">
-            <p className="capitalize font-bold">Employ turnover rate</p>
-            <p className="font-bold text-green text-xl">{"25%"}</p>
-            <p className="capitalize font-light text-text">
-              {"Resignatioin Last 90 days: 0"}
-            </p>
+          <div className="flex">
+            <div className="flex flex-col gap-3 flex-1">
+              <p className="capitalize font-bold">Employ turnover rate</p>
+              <p className="font-bold text-green text-xl">{"25%"}</p>
+              <p className="capitalize font-light text-text">
+                {"Resignatioin Last 90 days: 0"}
+              </p>
+            </div>
+
+            <div
+              style={{
+                padding: "20px",
+                background: "#ecf0f1",
+                borderRadius: "8px",
+                width: "50%",
+              }}
+            >
+              <h3>Overall Attendance</h3>
+              <Bar data={barData2} options={barOptions2} />
+            </div>
           </div>
         </ChartBox>
       </div>
@@ -91,7 +183,7 @@ function DashBoard() {
                 </tr>
               </thead>
               <tbody>
-                {data?.map(({ item1, item2, item3, item4 }: DataType, i) => (
+                {data2?.map(({ item1, item2, item3, item4 }: DataType, i) => (
                   <tr key={String(i)}>
                     <td className="border border-gray-300 p-2">{item1}</td>
                     <td className="border border-gray-300 p-2">{item2}</td>
