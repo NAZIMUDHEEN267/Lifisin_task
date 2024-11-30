@@ -1,6 +1,7 @@
 import { FaBell, FaSearch } from "react-icons/fa";
 import { IoMailSharp } from "react-icons/io5";
 import { MdQuestionMark } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -20,12 +21,18 @@ function Navbar() {
             />
           </div>
 
-          <div className="flex gap-1 items-center justify-center mr-5 cursor-pointer">
+          <Link
+            to={"/"}
+            className="flex gap-1 items-center justify-center mr-5"
+          >
             <MdQuestionMark className="border-2 border-text" />
             <p className="capitalize text-sm font-medium">Help</p>
-          </div>
+          </Link>
 
-          <div className="flex gap-1 items-center justify-center mr-5 cursor-pointer">
+          <Link
+            to={"/"}
+            className="flex gap-1 items-center justify-center mr-5"
+          >
             <div className="bg-light_blue p-[6px] rounded-full relative">
               <FaBell color="white" size={14} />
               <p className="absolute text-[8px] z-20 -top-1 -right-1 bg-white rounded-full p-[2px] text-brown">
@@ -33,9 +40,12 @@ function Navbar() {
               </p>
             </div>
             <p className="capitalize text-sm font-medium">Alerts</p>
-          </div>
+          </Link>
 
-          <div className="flex gap-1 items-center justify-center mr-5 cursor-pointer">
+          <Link
+            to={"/"}
+            className="flex gap-1 items-center justify-center mr-5"
+          >
             <div className="bg-dark_blue py-[3px] px-[2px] rounded-full relative">
               <IoMailSharp color="white" size={17} />
               <p className="absolute text-[8px] z-20 -top-1 -right-1 bg-white rounded-full p-[2px] text-brown">
@@ -43,7 +53,7 @@ function Navbar() {
               </p>
             </div>
             <p className="capitalize text-sm font-medium">Email</p>
-          </div>
+          </Link>
         </div>
 
         <div className="hero flex items-center justify-end flex-1">
@@ -59,10 +69,18 @@ function Navbar() {
       </div>
 
       <div className="flex justify-start gap-4 m-2 border-t-[1px] border-light_blue pt-2">
-        <button className="text-black text-sm font-light">Dashboard</button>
-        <button className="text-black text-sm font-light">Overview</button>
-        <button className="text-black text-sm font-light">Overview</button>
-        <button className="text-black text-sm font-light">Overview</button>
+        <Link to={"/"} className="text-black text-sm font-light">
+          Dashboard
+        </Link>
+        <Link to={"/"} className="text-black text-sm font-light">
+          Overview
+        </Link>
+        <Link to={"/"} className="text-black text-sm font-light">
+          Overview
+        </Link>
+        <Link to={"/"} className="text-black text-sm font-light">
+          Overview
+        </Link>
       </div>
     </>
   );

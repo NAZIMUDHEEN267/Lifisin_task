@@ -20,7 +20,7 @@ const data = Array.from(
 
 function DashBoard() {
   return (
-    <div className="p-6 border-[1px] border-light_blue rounded-sm h-full">
+    <div className="p-6 border-[1px] m-2 border-light_blue rounded-sm">
       <div className="flex gap-4 flex-1 justify-between">
         <ChartBox>
           <div className="flex flex-col gap-3">
